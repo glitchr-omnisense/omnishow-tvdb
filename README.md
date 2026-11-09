@@ -1,6 +1,6 @@
-# omnifilm/tvdb
+# omnishow/tvdb
 
-[omnisense/omnifilm](https://github.com/glitchr-omnisense/omnifilm)'s TheTVDB, under any PHP host,
+[omnisense/omnishow](https://github.com/glitchr-omnisense/omnishow)'s TheTVDB, under any PHP host,
 through its API v4: a token got once from the project's key (and a subscriber's PIN for a
 user-supported key) and kept for the provider's life; search; a series' or a film's extended record
 with its people, by its TheTVDB number or by an IMDb or TMDB number (`/search/remoteid`); an

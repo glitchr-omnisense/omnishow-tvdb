@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnifilm\Tvdb;
+namespace Omnishow\Tvdb;
 
-use Omnifilm\Config;
-use Omnifilm\Http\JsonClient;
-use Omnifilm\ProviderFactory;
-use Omnifilm\ProviderInterface;
+use Omnishow\Config;
+use Omnishow\Http\JsonClient;
+use Omnishow\ProviderFactory;
+use Omnishow\ProviderInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -23,9 +23,9 @@ final class TvdbFactory extends ProviderFactory
     protected function populate(Config $c): void
     {
         $c->defaults([
-            'omnifilm.factory_name' => 'tvdb',
-            'omnifilm.factory_title' => 'TheTVDB',
-            'omnifilm.required_options' => ['api_key'],
+            'omnishow.factory_name' => 'tvdb',
+            'omnishow.factory_title' => 'TheTVDB',
+            'omnishow.required_options' => ['api_key'],
             'pin' => null,
             'language' => null,
             'api' => 'https://api4.thetvdb.com/v4',

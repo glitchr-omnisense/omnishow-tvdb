@@ -1,17 +1,17 @@
 <?php
 
-namespace Omnifilm\Tvdb\Tests;
+namespace Omnishow\Tvdb\Tests;
 
-use Omnifilm\Exception\ProviderException;
-use Omnifilm\Model\Credit;
-use Omnifilm\Model\Query;
-use Omnifilm\Model\Role;
-use Omnifilm\Model\Work;
-use Omnifilm\Model\WorkRef;
-use Omnifilm\Model\WorkType;
-use Omnifilm\Testing\RecordedHttpClient;
-use Omnifilm\Tvdb\TvdbFactory;
-use Omnifilm\Tvdb\TvdbProvider;
+use Omnishow\Exception\ProviderException;
+use Omnishow\Model\Credit;
+use Omnishow\Model\Query;
+use Omnishow\Model\Role;
+use Omnishow\Model\Work;
+use Omnishow\Model\WorkRef;
+use Omnishow\Model\WorkType;
+use Omnishow\Testing\RecordedHttpClient;
+use Omnishow\Tvdb\TvdbFactory;
+use Omnishow\Tvdb\TvdbProvider;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -1,7 +1,7 @@
 {
-    "name": "omnifilm/tvdb",
+    "name": "omnishow/tvdb",
     "type": "library",
-    "description": "Omnifilm's TheTVDB, under any PHP host: series and their episodes in aired order, films, a work by its TheTVDB, IMDb or TMDB number, people and translations in the language asked, through TheTVDB's API v4 (a token got once from the project's key and a subscriber's PIN).",
+    "description": "Omnishow's TheTVDB, under any PHP host: series and their episodes in aired order, films, a work by its TheTVDB, IMDb or TMDB number, people and translations in the language asked, through TheTVDB's API v4 (a token got once from the project's key and a subscriber's PIN).",
     "keywords": [
         "thetvdb",
         "tvdb",
@@ -10,9 +10,9 @@
         "episode",
         "film",
         "framework-agnostic",
-        "omnifilm"
+        "omnishow"
     ],
-    "homepage": "https://github.com/glitchr-omnisense/omnifilm-tvdb",
+    "homepage": "https://github.com/glitchr-omnisense/omnishow-tvdb",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "omnisense/omnifilm": "^1.0@dev",
+        "omnisense/omnishow": "^1.0@dev",
         "symfony/http-client": "^6.4|^7.0|^8.0"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Omnifilm\\Tvdb\\": ""
+            "Omnishow\\Tvdb\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnifilm\\Tvdb\\Tests\\": "Tests/"
+            "Omnishow\\Tvdb\\Tests\\": "Tests/"
         }
     },
     "extra": {

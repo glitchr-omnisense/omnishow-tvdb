@@ -1,6 +1,6 @@
-# omnifilm/tvdb
+# omnishow/tvdb
 
-TheTVDB for [omnisense/omnifilm](https://github.com/glitchr-omnisense/omnifilm), through its API v4
+TheTVDB for [omnisense/omnishow](https://github.com/glitchr-omnisense/omnishow), through its API v4
 (`https://api4.thetvdb.com/v4`): search, a series' or a film's extended record with its people, by
 its TheTVDB number or by an IMDb or TMDB number, an episode, a season's episodes in aired order,
 titles and overviews in the language asked when TheTVDB has them. The provider calls:
@@ -20,10 +20,10 @@ TheTVDB has no sandbox. No v4 client taking the application's HTTP client was fo
 ## Installation
 
 ```sh
-composer require omnifilm/tvdb
+composer require omnishow/tvdb
 ```
 
-Requires PHP 8.2, `omnisense/omnifilm` (1.x) and `symfony/http-client` (6.4, 7 or 8).
+Requires PHP 8.2, `omnisense/omnishow` (1.x) and `symfony/http-client` (6.4, 7 or 8).
 
 ## Credentials
 
@@ -106,9 +106,9 @@ only the episodes of the season asked are kept, sorted by number.
 
 require __DIR__.'/vendor/autoload.php';
 
-use Omnifilm\Model\WorkRef;
-use Omnifilm\Model\WorkType;
-use Omnifilm\Tvdb\TvdbFactory;
+use Omnishow\Model\WorkRef;
+use Omnishow\Model\WorkType;
+use Omnishow\Tvdb\TvdbFactory;
 use Symfony\Component\HttpClient\HttpClient;
 
 $tvdb = (new TvdbFactory(HttpClient::create()))->create(['api_key' => getenv('TVDB_KEY'), 'language' => 'fr']);
@@ -141,11 +141,11 @@ In Symfony:
 
 ```yaml
 services:
-    Omnifilm\Tvdb\TvdbFactory:
+    Omnishow\Tvdb\TvdbFactory:
         arguments: ['@http_client']
-    Omnifilm\Registry:
+    Omnishow\Registry:
         arguments:
-            $factories: ['@Omnifilm\Tvdb\TvdbFactory']
+            $factories: ['@Omnishow\Tvdb\TvdbFactory']
             $config:
                 tvdb: { factory: tvdb, options: { api_key: '%env(TVDB_KEY)%', language: fr } }
 ```
