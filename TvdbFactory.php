@@ -34,6 +34,6 @@ final class TvdbFactory extends ProviderFactory
 
     protected function build(Config $c): ProviderInterface
     {
-        return new TvdbProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'TheTVDB', ['Accept' => 'application/json']), (string) $c->string('api_key'), $c->string('pin'), rtrim((string) $c->string('api'), '/'), $c->string('language'));
+        return new TvdbProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'TheTVDB', ['Accept' => 'application/json'], $c->backoff()), (string) $c->string('api_key'), $c->string('pin'), rtrim((string) $c->string('api'), '/'), $c->string('language'));
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Omnishow\Tvdb;
 
+use Omnisense\Contracts\Policy\DeclaresUsagePolicyInterface;
+use Omnisense\Contracts\Policy\UsagePolicy;
 use Omnishow\Capabilities;
 use Omnishow\EpisodesInterface;
 use Omnishow\Exception\NotSupportedException;
@@ -30,8 +32,13 @@ use Omnishow\SearchInterface;
  * order, titles and overviews in the language asked when TheTVDB has them
  * (its codes are three letters: "fra", "eng").
  */
-final class TvdbProvider implements ProviderInterface, SearchInterface, LookupInterface, EpisodesInterface
+final class TvdbProvider implements ProviderInterface, SearchInterface, LookupInterface, EpisodesInterface, DeclaresUsagePolicyInterface
 {
+    /** TheTVDB's usage policy, as its terms read on the day it says (provenance.verifiedAt). */
+    public const POLICY = __DIR__.'/policy.json';
+
+    private static ?UsagePolicy $policy = null;
+
     /** ISO 639-1 to TheTVDB's ISO 639-2 codes, for the languages asked most. */
     private const LANGUAGES = ['en' => 'eng', 'fr' => 'fra', 'de' => 'deu', 'es' => 'spa', 'it' => 'ita', 'pt' => 'por', 'nl' => 'nld', 'ja' => 'jpn', 'ko' => 'kor', 'zh' => 'zho', 'ru' => 'rus', 'pl' => 'pol', 'sv' => 'swe', 'da' => 'dan', 'no' => 'nor', 'fi' => 'fin'];
     /** TheTVDB's names of other registers (remoteIds' sourceName). */
@@ -54,6 +61,11 @@ final class TvdbProvider implements ProviderInterface, SearchInterface, LookupIn
         return 'TheTVDB';
     }
 
+    public function usagePolicy(): UsagePolicy
+    {
+        return self::$policy ??= UsagePolicy::fromFile(self::POLICY);
+    }
+
     public function capabilities(): Capabilities
     {
         return new Capabilities(
@@ -66,6 +78,7 @@ final class TvdbProvider implements ProviderInterface, SearchInterface, LookupIn
             credits: true,
             attribution: 'Metadata provided by TheTVDB (thetvdb.com). Please consider adding missing information or subscribing.',
             terms: ['https://thetvdb.com/api-information', 'https://thetvdb.com/tos'],
+            policy: $this->usagePolicy(),
         );
     }
 

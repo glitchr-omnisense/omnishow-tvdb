@@ -33,6 +33,19 @@ wording: "Metadata provided by TheTVDB. Please consider adding missing informati
   "Wikidata") is the reference's, not seen live.
 - Not verified live: no key.
 
+## Usage policy
+
+The package declares TheTVDB's usage policy as data, in [policy.json](policy.json)
+(omnisense/contracts' schema, read at its sources on 2026-11-10): rate limits none published
+("excessive calls" are refused, as TheTVDB determines them): unknown; free with the credit and a
+link under US$50,000 of yearly revenue, paid licences above (or the subscriber pin), a copy of the
+database or a caching proxy recommended, no redistribution, images not covered by the API licence.
+Through omnishow's registry every call is held to it: a site's own limit is counted; a commercial
+use cannot be declared allowed, a 429 and its `Retry-After` hold every next call until the wait is
+over (`UsageLimitReachedException`), and a site may tighten the policy in its configuration
+(`'policy' => [...]`), never loosen it. What the terms do not say is declared unknown; the sources
+and the details are in the file's `provenance`.
+
 ## Responsibility
 
 An independent, unofficial client, affiliated with, endorsed by or sponsored by none of the services

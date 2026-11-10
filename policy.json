@@ -1,0 +1,39 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "tvdb",
+    "rateLimits": null,
+    "rights": {
+        "commercial": "contract",
+        "openSourceRequired": false,
+        "caching": {
+            "permission": "allowed",
+            "maxTtl": null
+        },
+        "storage": "allowed",
+        "redistribution": "forbidden",
+        "attribution": {
+            "required": true,
+            "text": "Metadata provided by TheTVDB. Please consider adding missing information or subscribing.",
+            "url": "https://thetvdb.com",
+            "where": [
+                "display"
+            ]
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://thetvdb.com/tos",
+        "policy": "https://thetvdb.com/api-information",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": "https://support.thetvdb.com/",
+        "notes": "No rate limit is published: the terms forbid \"excessive calls to the API, as determined by us\". Licences by the project's yearly revenue: free with the credit under US$50,000, then paid tiers (US$1,000 a year to US$250,000, US$10,000 to US$1 million, a contract above); or a subscriber-supported key whose every user has a TheTVDB subscription (the pin option); discounts for open-source projects. Commercial use is therefore allowed under these licences (contract). The credit with a direct link to TheTVDB.com is shown to whoever sees the metadata. Keeping a copy of the database or a caching proxy is recommended (github.com/thetvdb/v4-api); reselling or distributing the data is not. The API licence does not cover images: their use needs their owners' permission."
+    }
+}
